@@ -1,16 +1,23 @@
-var express = require('express');
-var router = express.Router();
-const DB = require("./../modules/db");
+const express = require('express');
+
+const router = express.Router();
+const DB = require('./../modules/db');
+
 const db = new DB();
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-    res.json({message: 'Server works'});
-})
+  res.json({ message: 'Server works' });
+});
 
 router.get('/users', async (req, res, next) => {
-    let result = await db.read();
-    res.json(result);
+  const result = await db.read();
+  res.json(result);
+});
+
+router.delete('/users/:id', async (req, res, next) => {
+  const result = await db.delete(req.params.id);
+  res.json(result);
 });
 
 module.exports = router;
