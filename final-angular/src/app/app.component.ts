@@ -8,11 +8,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  list$: Observable<any> = this.us.read();
-
   constructor(private us:UserService) {
     us.access();
   }
+
+  list$: Observable<any> = this.us.read();
   title = 'final-angular';
+  searchText = '';
+
+  onDelete(id: number): void {
+    this.us.delete(id).forEach( data => console.log(data) )
+  }
 }
