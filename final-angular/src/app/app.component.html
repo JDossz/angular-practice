@@ -1,8 +1,9 @@
 <!-- {{ list$ | async | json }} -->
 
 <div class="row">
-  <div class="col-12">
-    <input type="text" class="form-control" [(ngModel)]="searchText">
+  <div class="col-4 mb-2">
+    <label for="search">Search:</label>
+    <input type="text" class="form-control" [(ngModel)]="searchText" name="search" id="search">
   </div>
 </div>
 
