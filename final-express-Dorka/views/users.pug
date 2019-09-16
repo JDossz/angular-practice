@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .row
+    .col-10
+      table.table.table-striped
+        thead
+          tr
+            th ID
+            th Name
+            th Email Address
+            th Age
+            th Address
+            th City
+            th Postal Code
+            th Hobby
+        tbody
+          each user in users
+            tr 
+              td #{user.id}
+              td #{user.name}
+              td #{user.email}
+              td #{user.age}
+              td #{user.address}
+              td #{user.city}
+              td #{user.zip}
+              td #{user.hobby}
+              
+
+
